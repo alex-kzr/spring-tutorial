@@ -10,4 +10,9 @@
     <bean id="musicBean"
           class="com.alexkozyura.tutorial.RockMusic">
     </bean>
+
+    <bean id="musicPlayer"
+          class="com.alexkozyura.tutorial.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
 </beans>
