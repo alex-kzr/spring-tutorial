@@ -15,7 +15,9 @@
 
     <bean id="musicPlayer"
           class="com.alexkozyura.tutorial.MusicPlayer"
-          scope="prototype">
+          scope="prototype"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
         <property name="music" ref="musicBean"/>
         <property name="name" value="Some name"/>
         <property name="volume" value="50"/>

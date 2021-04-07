@@ -30,6 +30,14 @@ public class MusicPlayer {
 
     public void setMusic(Music music) { this.music = music; };
 
+    public void doMyInit() {
+        System.out.println("MusicPlayer initialization");
+    }
+
+    public void doMyDestroy() {
+        System.out.println("MusicPlayer destruction");
+    }
+
     public void playMusic() {
         System.out.println("Playing: " + music.getSong());
     }
