@@ -8,7 +8,9 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
-          class="com.alexkozyura.tutorial.RockMusic">
+          class="com.alexkozyura.tutorial.RockMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
 
     <bean id="musicPlayer"
