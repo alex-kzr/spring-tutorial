@@ -12,7 +12,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="com.alexkozyura.tutorial.MusicPlayer">
+          class="com.alexkozyura.tutorial.MusicPlayer"
+          scope="prototype">
         <property name="music" ref="musicBean"/>
         <property name="name" value="Some name"/>
         <property name="volume" value="50"/>
