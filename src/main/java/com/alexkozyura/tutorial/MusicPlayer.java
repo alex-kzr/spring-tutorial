@@ -1,14 +1,18 @@
 package com.alexkozyura.tutorial;
 
-public class MusicPlayer {
-    private Music music;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-    // IoC
-    public MusicPlayer(Music music) {
-        this.music = music;
+@Component
+public class MusicPlayer {
+    private ClassicalMusic classicalMusic;
+
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic) {
+        this.classicalMusic = classicalMusic;
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: " + classicalMusic.getSong());
     }
 }
