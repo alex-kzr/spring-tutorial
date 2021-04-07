@@ -10,7 +10,8 @@
     <bean id="musicBean"
           class="com.alexkozyura.tutorial.RockMusic"
           init-method="doMyInit"
-          destroy-method="doMyDestroy">
+          destroy-method="doMyDestroy"
+          factory-method="getRockMusic">
     </bean>
 
     <bean id="musicPlayer"
