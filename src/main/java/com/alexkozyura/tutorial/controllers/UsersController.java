@@ -35,4 +35,10 @@ public class UsersController {
         model.addAttribute("user", new User());
         return "users/new";
     }
+
+    @PostMapping()
+    public String create(@ModelAttribute("user") User user) {
+        userDAO.save(user);
+        return "redirect:/users";
+    }
 }
