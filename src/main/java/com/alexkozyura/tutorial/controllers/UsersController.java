@@ -24,4 +24,10 @@ public class UsersController {
         model.addAttribute("users", userDAO.index());
         return "users/index";
     }
+
+    @GetMapping("/{id}")
+    public String show(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userDAO.show(id));
+        return "users/show";
+    }
 }
