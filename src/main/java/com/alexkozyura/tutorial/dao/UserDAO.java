@@ -32,4 +32,9 @@ public class UserDAO {
         user.setId(++PEOPLE_COUNT);
         users.add(user);
     }
+
+    public void update(int id, User updatedUser) {
+        User userToBeUpdated = show(id);
+        userToBeUpdated.setName(updatedUser.getName());
+    }
 }
