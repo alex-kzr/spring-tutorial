@@ -40,4 +40,10 @@ public class UsersController {
         userDAO.save(user);
         return "redirect:/users";
     }
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id) {
+        model.addAttribute("user", userDAO.show(id));
+        return "users/edit";
+    }
 }
