@@ -2,6 +2,7 @@ package com.alexkozyura.tutorial.dao;
 
 import com.alexkozyura.tutorial.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -18,13 +19,14 @@ public class UserDAO {
     }
 
     public List<User> index() {
-        return jdbcTemplate.query("SELECT * FROM app_user", new UserMapper());
+        return jdbcTemplate.query("SELECT * FROM app_user",
+                new BeanPropertyRowMapper<>(User.class));
     }
 
     public User show(int id) {
         return jdbcTemplate.query("SELECT * FROM app_user WHERE id=?",
-                new Object[]{id},
-                new UserMapper())
+                new BeanPropertyRowMapper<>(User.class),
+                id)
                     .stream()
                     .findAny()
                     .orElse(null);
